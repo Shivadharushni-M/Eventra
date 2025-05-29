@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import './styles/main.css'
+import { API_BASE_URL, fetchWithAuth } from './api/config';
 
 // Import components from their respective files
 import { LoginPage, SignupPage } from './components/auth/AuthComponents'
@@ -178,8 +179,8 @@ function App() {
     <Router>
       <div className="container">
         <Routes>
-          <Route path="/" element={
-            <LoginPage onLoginSuccess={handleSuccessfulLogin} />
+          <Route path="/" element={ 
+            <LoginPage onLoginSuccess={handleSuccessfulLogin} /> 
           } />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/student-homepage" element={
@@ -258,3 +259,4 @@ function App() {
 }
 
 export default App;
+
